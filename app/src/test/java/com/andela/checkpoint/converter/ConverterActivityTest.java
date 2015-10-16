@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class,  sdk = 21)
-public class MainActivityTest {
+public class ConverterActivityTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
