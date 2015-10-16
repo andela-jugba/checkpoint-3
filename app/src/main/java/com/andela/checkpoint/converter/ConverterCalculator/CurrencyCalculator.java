@@ -6,7 +6,7 @@ import com.andela.checkpoint.converter.calculator.Constants;
 /**
  * Created by andela on 10/16/15.
  */
-public class ConverterCalculator extends Calculator{
+public class CurrencyCalculator extends Calculator{
     private static double baseCurrency;
     private static double targetCurrencyOne;
     private static double targetCurrencyTwo;
@@ -35,7 +35,7 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setBaseCurrency(double baseCurrency) {
-        ConverterCalculator.baseCurrency = baseCurrency;
+        CurrencyCalculator.baseCurrency = baseCurrency;
     }
 
     public static boolean isTargetCurrencyTwoSet() {
@@ -43,7 +43,7 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setTargetCurrencyTwoSet(boolean targetCurrencyTwoSet) {
-        ConverterCalculator.targetCurrencyTwoSet = targetCurrencyTwoSet;
+        CurrencyCalculator.targetCurrencyTwoSet = targetCurrencyTwoSet;
     }
 
     public static boolean isTargetCurrencyOneSet() {
@@ -51,7 +51,7 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setTargetCurrencyOneSet(boolean targetCurrencyOneSet) {
-        ConverterCalculator.targetCurrencyOneSet = targetCurrencyOneSet;
+        CurrencyCalculator.targetCurrencyOneSet = targetCurrencyOneSet;
     }
 
     public static boolean isBaseCurrencySet() {
@@ -59,7 +59,7 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setBaseCurrencySet(boolean baseCurrencySet) {
-        ConverterCalculator.baseCurrencySet = baseCurrencySet;
+        CurrencyCalculator.baseCurrencySet = baseCurrencySet;
     }
 
     public static double getTargetCurrencyTwo() {
@@ -67,7 +67,7 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setTargetCurrencyTwo(double targetCurrencyTwo) {
-        ConverterCalculator.targetCurrencyTwo = targetCurrencyTwo;
+        CurrencyCalculator.targetCurrencyTwo = targetCurrencyTwo;
     }
 
     public static double getTargetCurrencyOne() {
@@ -75,6 +75,6 @@ public class ConverterCalculator extends Calculator{
     }
 
     public static void setTargetCurrencyOne(double targetCurrencyOne) {
-        ConverterCalculator.targetCurrencyOne = targetCurrencyOne;
+        CurrencyCalculator.targetCurrencyOne = targetCurrencyOne;
     }
 }
