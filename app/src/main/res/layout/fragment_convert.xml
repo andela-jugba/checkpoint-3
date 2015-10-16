@@ -1,10 +1,152 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
     tools:context="com.andela.checkpoint.converter.fragments.ConvertFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:elevation="8dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/editTextFirstCurrency"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/values_display_size"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:layout_weight="25"
+                />
+            <TextView
+                android:id="@+id/textViewOperator"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Operator"
+                android:textSize="@dimen/values_display_size"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:layout_weight="25"
+                android:gravity="center"
+                style="?android:listSeparatorTextViewStyle"
 
-</FrameLayout>
+                />
+            <EditText
+                android:id="@+id/editTextSecondCurrency"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="To Convert"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/values_display_size"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_weight="25"/>
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textSize="@dimen/values_display_size"
+                android:textStyle="bold"
+                android:layout_weight="25"
+                style="?android:listSeparatorTextViewStyle"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textViewFirstCurrencyLogo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="25"
+                android:clickable="true" />
+            <TextView
+                android:id="@+id/textViewOperatorLogo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textColor="#fff"
+                android:gravity="end"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="25"/>
+            <TextView
+                android:id="@+id/textViewSecondCurrencyLogo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textColor="#fff"
+                android:gravity="end"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="25"/>
+            <TextView
+                android:id="@+id/textViewResultLogo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textColor="#fff"
+                android:gravity="end"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_weight="25"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="98"
+            android:orientation="horizontal"
+            android:background="@color/custom_background">
+            <NumberPicker android:id="@+id/numberpicker"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:textColor="#fff"
+                />
+            <NumberPicker android:id="@+id/numberpickerOperator"
+                android:layout_width="fill_parent"
+                android:layout_weight="25"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                />
+            <NumberPicker android:id="@+id/numberpickerSecondCurrency"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:textColor="#fff"
+                />
+            <NumberPicker android:id="@+id/numberpickerResult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.andela.checkpoint.converter.ConverterCalculator.ConverterCalculator;
 import com.andela.checkpoint.converter.fragments.ConvertFragment;
 import com.andela.checkpoint.converter.fragments.TopTenFragment;
 
@@ -28,6 +29,9 @@ public class ConverterActivity extends AppCompatActivity {
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        ConverterCalculator converterCalculator = new ConverterCalculator();
+
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
