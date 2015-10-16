@@ -8,6 +8,8 @@ import java.text.DecimalFormat;
 public class Calculator {
 
     private double result;
+    public static final String[] operators = new String[]{Constants.ADD, Constants.SUBTRACT, Constants.DIVIDE, Constants.MULTIPLY};
+
 
     public Calculator() {
     }
