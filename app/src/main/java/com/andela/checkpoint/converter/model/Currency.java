@@ -26,6 +26,12 @@ public class Currency {
         return symbol;
     }
 
+    public int compareTo(Currency currency){
+        if(this.getRate() > currency.getRate())return 1;
+        else if(this.getRate() == currency.getRate())return 0;
+        else return -1;
+    }
+
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
@@ -55,9 +61,11 @@ public class Currency {
     }
 
     public static HashMap<String, Double> getCountryMap() {
+        List<Currency> tempCurrencies =  new ArrayList<>();
         for (int i = 0; i < countries.length; i++) {
-            currencies.add(new Currency(countries[i], rates[i]));
+            tempCurrencies.add(new Currency(countries[i], rates[i]));
         }
+        currencies = tempCurrencies;
         for (int i = 0; i < currencies.size(); i++) {
             Currency temp = currencies.get(i);
             countryMap.put(temp.getSymbol(), temp.getRate());
@@ -66,12 +74,17 @@ public class Currency {
     }
 
     public static void setCountryMap() {
+        List<Currency> tempCurrencies =  new ArrayList<>();
         for (int i = 0; i < countries.length; i++) {
-            currencies.add(new Currency(countries[i], rates[i]));
+            tempCurrencies.add(new Currency(countries[i], rates[i]));
         }
+        currencies = tempCurrencies;
         for (int i = 0; i < currencies.size(); i++) {
             Currency temp = currencies.get(i);
             countryMap.put(temp.getSymbol(), temp.getRate());
         }
+    }
+    public static HashMap<String, Double> getMap(){
+        return countryMap;
     }
 }
