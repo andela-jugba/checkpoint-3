@@ -7,14 +7,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.NumberPicker;
 
-import com.andela.checkpoint.converter.ConverterCalculator.ConverterCalculator;
-import com.andela.checkpoint.converter.WheelSelector.Selector;
-import com.andela.checkpoint.converter.calculator.Calculator;
+import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
 import com.andela.checkpoint.converter.fragments.ConvertFragment;
 import com.andela.checkpoint.converter.fragments.TopTenFragment;
+import com.andela.checkpoint.converter.utilities.jason.WebContentPullTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +33,8 @@ public class ConverterActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-
+        WebContentPullTask wp = new WebContentPullTask(this);
+//        wp.execute(CurrencySymbols.API_RATES_URL);
 
     }
     private void setupViewPager(ViewPager viewPager) {

@@ -87,7 +87,7 @@
                 android:id="@+id/textViewOperatorLogo"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="+"
+                android:text="@string/operation"
                 android:textColor="#fff"
                 android:gravity="end"
                 android:textSize="10sp"

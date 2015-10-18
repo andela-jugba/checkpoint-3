@@ -1,12 +1,8 @@
 package com.andela.checkpoint.converter.WheelSelector;
 
-import android.app.Activity;
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.telecom.Call;
+
 import android.view.View;
 import android.widget.NumberPicker;
-import android.widget.TextView;
 
 /**
  * Created by andela on 10/16/15.

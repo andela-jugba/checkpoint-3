@@ -5,6 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
-    <color name="custom_background">#022233</color>
+    <color name="custom_background">#ffff</color>
 
 </resources>
