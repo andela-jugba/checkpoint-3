@@ -8,13 +8,19 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
 import com.andela.checkpoint.converter.fragments.ConvertFragment;
 import com.andela.checkpoint.converter.fragments.TopTenFragment;
+import com.andela.checkpoint.converter.utilities.jason.WebContentPullTask;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConverterActivity extends AppCompatActivity {
+    private final String TAG = "ConverterActivity";
+    private final String CONVERT = "CONVERTER";
+    private final String TOP = "TOP TEN";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +34,15 @@ public class ConverterActivity extends AppCompatActivity {
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        WebContentPullTask wp = new WebContentPullTask(this);
+        wp.execute(CurrencySymbols.API_RATES_URL);
+
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ConvertFragment(), "CONVERTER");
-        adapter.addFragment(new TopTenFragment(), "TOP TEN");
+        adapter.addFragment(new ConvertFragment(), CONVERT);
+        adapter.addFragment(new TopTenFragment(), TOP);
         viewPager.setAdapter(adapter);
     }
 
