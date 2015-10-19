@@ -12,12 +12,11 @@ import android.widget.TextView;
 import com.andela.checkpoint.converter.ConverterCalculator.CurrencyCalculator;
 import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
 import com.andela.checkpoint.converter.R;
-import com.andela.checkpoint.converter.WheelSelector.Selector;
+import com.andela.checkpoint.converter.utilities.WheelSelector.Selector;
 import com.andela.checkpoint.converter.calculator.Calculator;
 import com.andela.checkpoint.converter.calculator.Constants;
 import com.andela.checkpoint.converter.model.Currency;
 import com.andela.checkpoint.converter.utilities.CustomTextView;
-import com.andela.checkpoint.converter.utilities.jason.WebContentPullTask;
 
 import java.util.Map;
 

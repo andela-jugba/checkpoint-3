@@ -18,6 +18,8 @@ import java.util.List;
 
 public class ConverterActivity extends AppCompatActivity {
     private final String TAG = "ConverterActivity";
+    private final String CONVERT = "CONVERTER";
+    private final String TOP = "TOP TEN";
 
 
     @Override
@@ -34,13 +36,13 @@ public class ConverterActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         WebContentPullTask wp = new WebContentPullTask(this);
-//        wp.execute(CurrencySymbols.API_RATES_URL);
+        wp.execute(CurrencySymbols.API_RATES_URL);
 
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ConvertFragment(), "CONVERTER");
-        adapter.addFragment(new TopTenFragment(), "TOP TEN");
+        adapter.addFragment(new ConvertFragment(), CONVERT);
+        adapter.addFragment(new TopTenFragment(), TOP);
         viewPager.setAdapter(adapter);
     }
 

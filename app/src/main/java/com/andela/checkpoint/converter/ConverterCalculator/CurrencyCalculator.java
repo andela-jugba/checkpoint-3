@@ -26,17 +26,17 @@ public class CurrencyCalculator extends Calculator{
 
     public double convert(double currencyOne, double currencyTwo, String operator){
 
-        if(targetCurrencyOne == targetCurrencyTwo && baseCurrency == targetCurrencyOne && baseCurrency == targetCurrencyTwo){
-            calculate(operator,currencyOne,currencyTwo);
-            return getResult();
-        }else if(targetCurrencyOne == targetCurrencyTwo){
-            calculate(operator,currencyOne,currencyTwo);
-             setResult(getResult() * baseCurrency);
-            return getResult();
-        } else {
+//        if(targetCurrencyOne == targetCurrencyTwo && baseCurrency == targetCurrencyOne && baseCurrency == targetCurrencyTwo){
+//            calculate(operator,currencyOne,currencyTwo);
+//            return getResult();
+//        }else if(targetCurrencyOne == targetCurrencyTwo){
+//            calculate(operator,currencyOne,currencyTwo);
+//             setResult(getResult() * baseCurrency);
+//            return getResult();
+//        } else {
             calculate(operator, convert(currencyOne,targetCurrencyOne, baseCurrency),convert(currencyTwo,targetCurrencyTwo, baseCurrency));
             return getResult();
-        }
+//        }
     }
     private double convert(double currency, double targetCurrency, double baseCurrency){
         return currency /targetCurrency * baseCurrency;

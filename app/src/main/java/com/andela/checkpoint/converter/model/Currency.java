@@ -5,17 +5,18 @@ import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Created by andela on 10/16/15.
  */
-public class Currency {
+public class Currency implements Comparable<Currency>{
     private String symbol;
     private double rate;
     private static String[] countries = CurrencySymbols.CURRENCY_SYMBOLS;
     private static double[] rates = CurrencySymbols.currencyRates;
     private static HashMap<String, Double> countryMap = new HashMap<>();
-    private static List<Currency> currencies = new ArrayList<>();
+    public static List<Currency> currencies = new ArrayList<>();
 
     public Currency(String symbol, double rate) {
         this.symbol = symbol;
@@ -83,6 +84,17 @@ public class Currency {
             Currency temp = currencies.get(i);
             countryMap.put(temp.getSymbol(), temp.getRate());
         }
+    }
+    public static ArrayList<Currency> getTopTen(){
+        ArrayList<Currency> topTen = new ArrayList<>();
+        PriorityQueue<Currency> temp = new PriorityQueue<>();
+        for (int i = 0; i < currencies.size(); i++) {
+            temp.offer(currencies.get(i));
+        }
+        while(!temp.isEmpty()){
+            topTen.add(temp.poll());
+        }
+        return topTen;
     }
     public static HashMap<String, Double> getMap(){
         return countryMap;

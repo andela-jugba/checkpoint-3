@@ -28,7 +28,7 @@ public class Selector {
         picker.setMaxValue(values.length - 1);
         picker.setMinValue(0);
         picker.setDisplayedValues(values);
-        picker.setWrapSelectorWheel(true);
+//        picker.setWrapSelectorWheel(true);
         picker.setOnValueChangedListener(new NumberPicker.
                 OnValueChangeListener() {
             @Override

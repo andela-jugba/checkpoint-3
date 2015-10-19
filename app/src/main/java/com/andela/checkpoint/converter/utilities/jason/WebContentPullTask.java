@@ -38,7 +38,7 @@ public class WebContentPullTask extends AsyncTask<String, Void, JSONObject> {
     @Override
     protected void onPostExecute(final JSONObject s) {
         super.onPostExecute(s);
-        Log.i(TAG, s.toString());
+        //Log.i(TAG, s.toString());
         if(s != null) {
             try {
                 double[] rates = new double[CurrencySymbols.NUMBER_OF_COUNTRIES];

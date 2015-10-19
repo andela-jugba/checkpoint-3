@@ -5,9 +5,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
-import com.andela.checkpoint.converter.R;
-import com.andela.checkpoint.converter.WheelSelector.Selector;
-
 /**
  * Created by andela on 10/16/15.
  */
