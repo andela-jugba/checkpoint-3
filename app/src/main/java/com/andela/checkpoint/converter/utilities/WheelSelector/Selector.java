@@ -1,4 +1,4 @@
-package com.andela.checkpoint.converter.WheelSelector;
+package com.andela.checkpoint.converter.utilities.WheelSelector;
 
 
 import android.view.View;
