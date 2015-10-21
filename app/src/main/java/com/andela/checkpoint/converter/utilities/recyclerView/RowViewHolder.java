@@ -13,13 +13,13 @@ import com.andela.checkpoint.converter.R;
 
 public class RowViewHolder extends RecyclerView.ViewHolder {
 
-    TextView textViewCurency;
+    TextView textViewCurrency;
     TextView textView;
 
     public RowViewHolder(View view) {
         super(view);
         this.textView = (TextView) view.findViewById(R.id.title);
-        this.textViewCurency = (TextView) view.findViewById(R.id.currency_value);
+        this.textViewCurrency = (TextView) view.findViewById(R.id.currency_value);
     }
 }
 

@@ -30,7 +30,6 @@ public class Calculator {
             case Constants.MULTIPLY:
                 setResult(roundTo2Decimals(firstNumber * secondNumber));
                 break;
-
         }
     }
 

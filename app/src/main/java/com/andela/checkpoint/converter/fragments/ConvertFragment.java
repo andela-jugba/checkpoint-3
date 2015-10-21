@@ -42,7 +42,7 @@ public class ConvertFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        CurrencyCalculator.updateRates();
     }
 
     @Override

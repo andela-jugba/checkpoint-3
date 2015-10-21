@@ -32,10 +32,26 @@ public class TopTenFragment extends Fragment {
         // Inflate the layout for this fragment
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new RecyclerViewAdapter(getContext(), Currency.getTopTen());
-        recyclerView.setAdapter(adapter);
+
+        updateUI();
         return v;
 
     }
 
+    private void updateUI(){
+        if (adapter == null){
+            adapter = new RecyclerViewAdapter(getContext(), Currency.getTopTen());
+            recyclerView.setAdapter(adapter);
+
+        }else{
+            adapter.notifyDataSetChanged();
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
 }
