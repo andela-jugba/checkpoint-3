@@ -44,6 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RowViewHolder>{
     public void onBindViewHolder(RowViewHolder rowViewHolder, int position) {
         Currency items = itemsList.get(position);
         rowViewHolder.textView.setText(String.valueOf(items.getSymbol()));
-        rowViewHolder.textViewCurency.setText(String.valueOf(items.getRate()));
+        rowViewHolder.textViewCurrency.setText(String.valueOf(items.getRate()));
     }
+
 }

@@ -75,15 +75,8 @@ public class Currency implements Comparable<Currency>{
     }
 
     public static void setCountryMap() {
-        List<Currency> tempCurrencies =  new ArrayList<>();
-        for (int i = 0; i < countries.length; i++) {
-            tempCurrencies.add(new Currency(countries[i], rates[i]));
-        }
-        currencies = tempCurrencies;
-        for (int i = 0; i < currencies.size(); i++) {
-            Currency temp = currencies.get(i);
-            countryMap.put(temp.getSymbol(), temp.getRate());
-        }
+        getCountryMap();
+
     }
     public static ArrayList<Currency> getTopTen(){
         ArrayList<Currency> topTen = new ArrayList<>();
