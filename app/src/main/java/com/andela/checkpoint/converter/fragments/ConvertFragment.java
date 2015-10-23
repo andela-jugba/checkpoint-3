@@ -42,6 +42,7 @@ public class ConvertFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         CurrencyCalculator.updateRates();
     }
 
@@ -112,7 +113,7 @@ public class ConvertFragment extends Fragment {
 
     }
 
-    private void compute(View v){
+    public void compute(View v){
         double result = currencyCalculator.convert(getTextCurrencyEditText(v,R.id.editTextFirstCurrency),getTextCurrencyEditText(v,R.id.editTextSecondCurrency),
                 getOperatorText(v));
         mResultTextView.setText(String.valueOf(result));
@@ -134,7 +135,7 @@ public class ConvertFragment extends Fragment {
         return d;
     }
 
-    private String getOperatorText(View v){
+    public String getOperatorText(View v){
         TextView textView = (TextView) v.findViewById(R.id.textViewOperator);
         String string = String.valueOf(textView.getText());
         if(string == "Operator"){

@@ -1,6 +1,5 @@
 package com.andela.checkpoint.converter.ConverterCalculator;
 
-import android.util.Log;
 
 import com.andela.checkpoint.converter.calculator.Calculator;
 import com.andela.checkpoint.converter.calculator.Constants;
