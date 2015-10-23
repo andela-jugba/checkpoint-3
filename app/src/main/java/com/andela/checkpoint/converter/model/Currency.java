@@ -89,7 +89,4 @@ public class Currency implements Comparable<Currency>{
         }
         return topTen;
     }
-    public static HashMap<String, Double> getMap(){
-        return countryMap;
-    }
 }
