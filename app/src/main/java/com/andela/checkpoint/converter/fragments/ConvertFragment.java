@@ -29,13 +29,13 @@ public class ConvertFragment extends Fragment {
     private String[] operators = CurrencyCalculator.operators;
     private String operator;
 
-    private Map<String,Double> map = Currency.getCountryMap();
+    private Map<String, Double> map = Currency.getCountryMap();
 
     private TextView mResultTextView;
 
     private CurrencyCalculator currencyCalculator;
 
-    public ConvertFragment(){
+    public ConvertFragment() {
         currencyCalculator = new CurrencyCalculator();
     }
 
@@ -72,7 +72,7 @@ public class ConvertFragment extends Fragment {
         });
     }
 
-    private void initWheels(final View v){
+    private void initWheels(final View v) {
         Selector firstCurrencyWheel = new Selector(v, CurrencySymbols.CURRENCY_SYMBOLS, R.id.numberpicker, new Selector.CallBack() {
             @Override
             public void onChange(int newVal) {
@@ -113,21 +113,21 @@ public class ConvertFragment extends Fragment {
 
     }
 
-    public void compute(View v){
-        double result = currencyCalculator.convert(getTextCurrencyEditText(v,R.id.editTextFirstCurrency),getTextCurrencyEditText(v,R.id.editTextSecondCurrency),
+    public void compute(View v) {
+        final double textCurrencyEditTextOne = getTextCurrencyEditText(v, R.id.editTextFirstCurrency);
+        final double textCurrencyEditTextTwo = getTextCurrencyEditText(v, R.id.editTextSecondCurrency);
+        double result = currencyCalculator.convert(textCurrencyEditTextOne, textCurrencyEditTextTwo,
                 getOperatorText(v));
         mResultTextView.setText(String.valueOf(result));
     }
 
-    private double getTextCurrencyEditText(View v, int viewId){
+    private double getTextCurrencyEditText(View v, int viewId) {
         double d = 0;
         EditText editText = (EditText) v.findViewById(viewId);
         double length = editText.getText().length();
-        if(length>0) {
+        if (length > 0) {
             String string = String.valueOf(editText.getText());
-            if(length ==1 && string.startsWith(".")){
-
-            }else {
+            if (!(length == 1 && string.startsWith("."))) {
                 String s = String.valueOf(editText.getText());
                 d = Double.parseDouble(s);
             }
@@ -135,12 +135,12 @@ public class ConvertFragment extends Fragment {
         return d;
     }
 
-    public String getOperatorText(View v){
+    public String getOperatorText(View v) {
         TextView textView = (TextView) v.findViewById(R.id.textViewOperator);
         String string = String.valueOf(textView.getText());
-        if(string == "Operator"){
+        if (string == "Operator") {
             return Constants.ADD;
-        }else return string;
+        } else return string;
     }
 
 
