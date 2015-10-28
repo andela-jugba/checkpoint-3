@@ -1,7 +1,6 @@
-package com.andela.checkpoint.converter.utilities.recyclerView;
+package com.andela.checkpoint.converter.ui_helpers.recyclerView;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.RecyclerView;
 

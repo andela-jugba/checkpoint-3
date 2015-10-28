@@ -1,10 +1,10 @@
-package com.andela.checkpoint.converter.ConverterCalculator;
+package com.andela.checkpoint.converter.converter_calculator;
 
 
 import com.andela.checkpoint.converter.calculator.Calculator;
 import com.andela.checkpoint.converter.calculator.Constants;
 import com.andela.checkpoint.converter.model.Currency;
-import com.andela.checkpoint.converter.utilities.jason.CurrencyTask;
+import com.andela.checkpoint.converter.asyc_tasks.CurrencyTask;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,7 +66,6 @@ public class CurrencyCalculator extends Calculator {
         if (object != null) {
 
             double[] rates = new double[CurrencySymbols.NUMBER_OF_COUNTRIES];
-            String[] countries = new String[CurrencySymbols.NUMBER_OF_COUNTRIES];
 
             JSONObject ratesObj = object.getJSONObject(CurrencySymbols.RATES);
             rates[0] = 1;

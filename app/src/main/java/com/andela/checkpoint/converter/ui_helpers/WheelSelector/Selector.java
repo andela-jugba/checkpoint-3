@@ -1,4 +1,4 @@
-package com.andela.checkpoint.converter.utilities.WheelSelector;
+package com.andela.checkpoint.converter.ui_helpers.WheelSelector;
 
 
 import android.view.View;
@@ -15,7 +15,7 @@ public class Selector {
 
     CallBack callBacked;
 
-    public Selector(View v , String[] values, int numberViewId, CallBack callBack){
+    public Selector(View v, String[] values, int numberViewId, CallBack callBack) {
         this.values = values;
         this.numberViewId = numberViewId;
         this.callBacked = callBack;
@@ -23,7 +23,7 @@ public class Selector {
         init();
     }
 
-    public void init(){
+    public void init() {
         picker = (NumberPicker) v.findViewById(numberViewId);
         picker.setMaxValue(values.length - 1);
         picker.setMinValue(0);
@@ -40,11 +40,7 @@ public class Selector {
 
     }
 
-    public NumberPicker getPicker() {
-        return picker;
-    }
-
-    public interface CallBack{
+    public interface CallBack {
         void onChange(int newVal);
     }
 }

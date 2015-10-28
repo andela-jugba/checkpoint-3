@@ -1,13 +1,6 @@
-package com.andela.checkpoint.converter.utilities.jason;
+package com.andela.checkpoint.converter.asyc_tasks;
 
-import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.NumberPicker;
-
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
-import com.andela.checkpoint.converter.R;
-import com.andela.checkpoint.converter.model.Currency;
 
 
 import org.json.JSONException;
