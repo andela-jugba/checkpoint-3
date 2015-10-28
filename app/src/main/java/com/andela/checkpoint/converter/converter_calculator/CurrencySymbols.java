@@ -1,4 +1,4 @@
-package com.andela.checkpoint.converter.ConverterCalculator;
+package com.andela.checkpoint.converter.converter_calculator;
 
 /**
  * Created by andela on 10/16/15.

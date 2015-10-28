@@ -1,6 +1,6 @@
 package com.andela.checkpoint.converter.model;
 
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
+import com.andela.checkpoint.converter.converter_calculator.CurrencySymbols;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 /**
  * Created by andela on 10/16/15.
  */
-public class Currency implements Comparable<Currency>{
+public class Currency implements Comparable<Currency> {
     private String symbol;
     private double rate;
     private static String[] countries = CurrencySymbols.CURRENCY_SYMBOLS;
@@ -27,10 +27,10 @@ public class Currency implements Comparable<Currency>{
         return symbol;
     }
 
-    public int compareTo(Currency currency){
-        if(this.getRate() > currency.getRate())return 1;
-        else if(this.getRate() == currency.getRate())return 0;
-        else return -1;
+    public int compareTo(Currency currency) {
+        if (this.getRate() > currency.getRate()) return 1;
+        else if (this.getRate() == currency.getRate()) return 0;
+        return -1;
     }
 
     public void setSymbol(String symbol) {
@@ -62,7 +62,12 @@ public class Currency implements Comparable<Currency>{
     }
 
     public static HashMap<String, Double> getCountryMap() {
-        List<Currency> tempCurrencies =  new ArrayList<>();
+        updateCountryMap();
+        return countryMap;
+    }
+
+    private static void updateCountryMap() {
+        List<Currency> tempCurrencies = new ArrayList<>();
         for (int i = 0; i < countries.length; i++) {
             tempCurrencies.add(new Currency(countries[i], rates[i]));
         }
@@ -71,20 +76,19 @@ public class Currency implements Comparable<Currency>{
             Currency temp = currencies.get(i);
             countryMap.put(temp.getSymbol(), temp.getRate());
         }
-        return countryMap;
     }
 
     public static void setCountryMap() {
-        getCountryMap();
-
+        updateCountryMap();
     }
-    public static ArrayList<Currency> getTopTen(){
+
+    public static ArrayList<Currency> getTopTen() {
         ArrayList<Currency> topTen = new ArrayList<>();
         PriorityQueue<Currency> temp = new PriorityQueue<>();
         for (int i = 0; i < currencies.size(); i++) {
             temp.offer(currencies.get(i));
         }
-        while(!temp.isEmpty()){
+        while (!temp.isEmpty()) {
             topTen.add(temp.poll());
         }
         return topTen;

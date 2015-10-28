@@ -1,9 +1,7 @@
 package com.andela.checkpoint.converter;
 
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencyCalculator;
-import com.andela.checkpoint.converter.calculator.Calculator;
+import com.andela.checkpoint.converter.converter_calculator.CurrencyCalculator;
 import com.andela.checkpoint.converter.calculator.Constants;
-import com.andela.checkpoint.converter.model.Currency;
 
 import org.junit.After;
 import org.junit.Before;

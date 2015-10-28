@@ -12,9 +12,7 @@ import android.view.ViewGroup;
 
 import com.andela.checkpoint.converter.R;
 import com.andela.checkpoint.converter.model.Currency;
-import com.andela.checkpoint.converter.utilities.recyclerView.RecyclerViewAdapter;
-
-import java.util.ArrayList;
+import com.andela.checkpoint.converter.ui_helpers.recyclerView.RecyclerViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +20,7 @@ import java.util.ArrayList;
 public class TopTenFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
+
     public TopTenFragment() {
     }
 
@@ -29,7 +28,6 @@ public class TopTenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_top_ten, container, false);
-        // Inflate the layout for this fragment
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -38,12 +36,12 @@ public class TopTenFragment extends Fragment {
 
     }
 
-    private void updateUI(){
-        if (adapter == null){
+    private void updateUI() {
+        if (adapter == null) {
             adapter = new RecyclerViewAdapter(getContext(), Currency.getTopTen());
             recyclerView.setAdapter(adapter);
 
-        }else{
+        } else {
             adapter.notifyDataSetChanged();
         }
 

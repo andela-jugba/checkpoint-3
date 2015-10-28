@@ -3,4 +3,6 @@
 
     <string name="operation">Operation</string>
     <string name="initial_currency_value">0</string>
+    <string name="convert_fragment_title">CONVERTER</string>
+    <string name="top_ten_fragment_title">TOP TEN</string>
 </resources>

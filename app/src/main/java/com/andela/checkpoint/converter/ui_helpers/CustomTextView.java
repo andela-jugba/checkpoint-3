@@ -1,4 +1,4 @@
-package com.andela.checkpoint.converter.utilities;
+package com.andela.checkpoint.converter.ui_helpers;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,18 +15,20 @@ public class CustomTextView {
     private View v;
 
 
-    public CustomTextView(View v, int numberView, Callback callback){
+    public CustomTextView(View v, int numberView, Callback callback) {
         this.callback = callback;
         this.displayView = numberView;
         this.v = v;
         init();
 
     }
-    private void init(){
+
+    private void init() {
         editText = (EditText) v.findViewById(displayView);
         editText.addTextChangedListener(getTextWatcher());
     }
-    private TextWatcher getTextWatcher(){
+
+    private TextWatcher getTextWatcher() {
         return new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -45,7 +47,7 @@ public class CustomTextView {
         };
     }
 
-    public interface Callback{
+    public interface Callback {
         void onTextChange(String s);
     }
 }

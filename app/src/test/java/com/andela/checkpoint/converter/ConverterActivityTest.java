@@ -10,8 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencyCalculator;
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
+import com.andela.checkpoint.converter.converter_calculator.CurrencyCalculator;
+import com.andela.checkpoint.converter.converter_calculator.CurrencySymbols;
 import com.andela.checkpoint.converter.calculator.Constants;
 import com.andela.checkpoint.converter.fragments.ConvertFragment;
 import com.andela.checkpoint.converter.fragments.TopTenFragment;

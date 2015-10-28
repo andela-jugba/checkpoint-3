@@ -9,25 +9,23 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencyCalculator;
-import com.andela.checkpoint.converter.ConverterCalculator.CurrencySymbols;
+import com.andela.checkpoint.converter.converter_calculator.CurrencyCalculator;
+import com.andela.checkpoint.converter.converter_calculator.CurrencySymbols;
 import com.andela.checkpoint.converter.R;
-import com.andela.checkpoint.converter.utilities.WheelSelector.Selector;
+import com.andela.checkpoint.converter.ui_helpers.WheelSelector.Selector;
 import com.andela.checkpoint.converter.calculator.Calculator;
 import com.andela.checkpoint.converter.calculator.Constants;
 import com.andela.checkpoint.converter.model.Currency;
-import com.andela.checkpoint.converter.utilities.CustomTextView;
+import com.andela.checkpoint.converter.ui_helpers.CustomTextView;
 
 import java.util.Map;
 
 
 public class ConvertFragment extends Fragment {
 
-    private static String TAG = "ConvertFragment";
     private String[] countries = CurrencySymbols.CURRENCY_SYMBOLS;
-    private double[] rates = Currency.getRates();
     private String[] operators = CurrencyCalculator.operators;
-    private String operator;
+
 
     private Map<String, Double> map = Currency.getCountryMap();
 
@@ -87,7 +85,6 @@ public class ConvertFragment extends Fragment {
             public void onChange(int newVal) {
                 TextView textView = (TextView) v.findViewById(R.id.textViewOperator);
                 textView.setText(operators[newVal]);
-                operator = operators[newVal];
                 compute(v);
             }
         });
@@ -125,6 +122,7 @@ public class ConvertFragment extends Fragment {
         double d = 0;
         EditText editText = (EditText) v.findViewById(viewId);
         double length = editText.getText().length();
+
         if (length > 0) {
             String string = String.valueOf(editText.getText());
             if (!(length == 1 && string.startsWith("."))) {
@@ -140,7 +138,8 @@ public class ConvertFragment extends Fragment {
         String string = String.valueOf(textView.getText());
         if (string == "Operator") {
             return Constants.ADD;
-        } else return string;
+        }
+        return string;
     }
 
 
